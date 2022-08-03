@@ -1,5 +1,6 @@
 package com.gamba.listaspesa.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,6 +24,7 @@ public class ListItem {
 
     @OneToMany(cascade = CascadeType.MERGE, fetch = FetchType.LAZY, orphanRemoval = true)
     @JoinColumn(name = "listitem_id")
+    @JsonIgnore
     private List<Item> items;
 
 }

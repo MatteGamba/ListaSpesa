@@ -23,8 +23,9 @@ public class Item {
     @Column(name = "quantity")
     private int quantity;
 
-    @JoinColumn
-    private ListItem listItem;
+//    @ManyToOne
+//    @JoinColumn()
+//    private ListItem listItem;
 
 
 

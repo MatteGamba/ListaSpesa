@@ -27,35 +27,35 @@ public class ListaspesaApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		Item I1 = Item.builder()
-				.title("Latte")
-				.quantity(2)
-				.build();
-		Item I2 = Item.builder()
-				.title("Caffè")
-				.quantity(2)
-				.build();
-		Item I3 = Item.builder()
-				.title("Biscotti")
-				.quantity(3)
-				.build();
-		List<Item> items = new ArrayList<Item>();
-		items.add(I1);
-		items.add(I2);
-		items.add(I3);
-
-		ListItem L1 = ListItem.builder()
-				.title("Carrefour")
-				.items(items).build();
-		ListItem L2 = ListItem.builder()
-				.title("Bennet")
-				.build();
-
-		itemRepo.save(I1);
-		itemRepo.save(I2);
-		itemRepo.save(I3);
-		listItemRepo.save(L1);
-		listItemRepo.save(L2);
+//		Item I1 = Item.builder()
+//				.title("Latte")
+//				.quantity(2)
+//				.build();
+//		Item I2 = Item.builder()
+//				.title("Caffè")
+//				.quantity(2)
+//				.build();
+//		Item I3 = Item.builder()
+//				.title("Biscotti")
+//				.quantity(3)
+//				.build();
+//		List<Item> items = new ArrayList<Item>();
+//		items.add(I1);
+//		items.add(I2);
+//		items.add(I3);
+//
+//		ListItem L1 = ListItem.builder()
+//				.title("Carrefour")
+//				.items(items).build();
+//		ListItem L2 = ListItem.builder()
+//				.title("Bennet")
+//				.build();
+//
+//		itemRepo.save(I1);
+//		itemRepo.save(I2);
+//		itemRepo.save(I3);
+//		listItemRepo.save(L1);
+//		listItemRepo.save(L2);
 
 
 
