@@ -1,7 +1,9 @@
 package com.gamba.listaspesa.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
@@ -10,6 +12,8 @@ import java.util.List;
 @Table(name = "listitem")
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class ListItem {
 
     @Id
@@ -17,13 +21,8 @@ public class ListItem {
     private Long id;
     private String title;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.MERGE, fetch = FetchType.LAZY, orphanRemoval = true)
     @JoinColumn(name = "listitem_id")
     private List<Item> items;
 
-    public ListItem(Long id, String title, List<Item> items) {
-        this.id = id;
-        this.title = title;
-        this.items = items;
-    }
 }

@@ -5,9 +5,7 @@ import com.gamba.listaspesa.service.ShopService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,4 +26,15 @@ public class ShopRest {
         return new ResponseEntity<List<ListItem>>(listItems, HttpStatus.OK);
     }
 
+    @GetMapping("/list/{id}")
+    public ResponseEntity<ListItem> getListById(@PathVariable("id") Long id){
+        ListItem listItem = service.getListById(id);
+        return new ResponseEntity<ListItem>(listItem,HttpStatus.OK);
+    }
+
+    @PostMapping("/list/add")
+    public ResponseEntity<ListItem> addList(@RequestBody ListItem listItem){
+        ListItem newListItem = service.addList(listItem);
+        return new ResponseEntity<ListItem>(newListItem, HttpStatus.CREATED);
+    }
 }

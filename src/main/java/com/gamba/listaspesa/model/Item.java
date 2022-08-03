@@ -1,7 +1,9 @@
 package com.gamba.listaspesa.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
@@ -9,6 +11,8 @@ import javax.persistence.*;
 @Table(name = "item")
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Item {
 
     @Id
@@ -19,12 +23,9 @@ public class Item {
     @Column(name = "quantity")
     private int quantity;
 
+    @JoinColumn
+    private ListItem listItem;
 
-    public Item(Long id, String title, int quantity) {
-        this.id = id;
-        this.title = title;
-        this.quantity = quantity;
-    }
 
 
 
